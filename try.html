@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Street Light Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        .image-container {
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .bulb-icon {
+            position: absolute;
+            font-size: 50px; /* Adjust size as needed */
+        }
+        .value {
+            position: absolute;
+            font-size: 16px;
+            background-color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Street Light Fault Detection</h1>
+    </div>
+    <div class="image-container">
+        <img src="Map.jpg" alt="Map Image">
+    </div>
+    <script>
+        // Function to create bulb icon
+        function createBulbIcon(id, top, left, color) {
+            const icon = document.createElement('i');
+            icon.classList.add('bulb-icon', 'fas', 'fa-lightbulb');
+            icon.id = id;
+            icon.style.top = top;
+            icon.style.left = left;
+            icon.style.color = color; // Set the color of the bulb icon
+            icon.style.position = 'absolute';
+            document.querySelector('.image-container').appendChild(icon);
+            
+            const valueContainer = document.createElement('div');
+            valueContainer.classList.add('value');
+            valueContainer.id = `${id}-value`; // Corrected string interpolation
+            valueContainer.style.top = `calc(${top} + 50px)`; // Adjust the top position to place the value below the icon
+            valueContainer.style.left = left;
+            valueContainer.style.position = 'absolute';
+            document.querySelector('.image-container').appendChild(valueContainer);
+           
+            return icon;
+        }
+
+        // Add bulb icons at specified positions with specific colors
+        createBulbIcon('bulb1', '230px', '240px', 'green');
+        createBulbIcon('bulb2', '100px', '620px', 'green');
+
+        // Function to fetch and display numeric value from ThingSpeak API
+        async function fetchNumericValue(apiUrl, elementId, iconId, fieldNumber) {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                console.log(data); // Debugging log
+                if (data.feeds && data.feeds.length > 0) {
+                    const value = parseFloat(data.feeds[0]['field' + fieldNumber]); // Fetch value based on fieldNumber
+                    document.getElementById(elementId).innerText = value + ' V'; // Append unit to the value
+                    
+                    // Apply condition to change bulb color and text
+                    const icon = document.getElementById(iconId);
+                    if (value < 6 ) {
+                        icon.style.color = 'red';
+                        document.getElementById(elementId).innerText += ' (Faulty light)';
+                    } else {
+                        icon.style.color = 'green';
+                        document.getElementById(elementId).innerText += ' (Normal light)';
+                    }
+                } else {
+                    document.getElementById(elementId).innerText = 'No data';
+                }
+            } catch (error) {
+                console.error('Error fetching numeric value:', error);
+                document.getElementById(elementId).innerText = 'Error';
+            }
+        }
+
+        // ThingSpeak API URLs with the actual channel ID and read API key
+        const apiUrl1 = 'https://api.thingspeak.com/channels/2560467/fields/1.json?api_key=LU77UI8A8GW5LKWK&results=1'; // URL for field1
+        const apiUrl2 = 'https://api.thingspeak.com/channels/2560467/fields/2.json?api_key=LU77UI8A8GW5LKWK&results=1'; // URL for field2
+
+        // Fetch and display values for bulb1 and bulb2
+        fetchNumericValue(apiUrl1, 'bulb1-value', 'bulb1', 1);
+        fetchNumericValue(apiUrl2, 'bulb2-value', 'bulb2', 2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* The Navigation CSS */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #7d7a19, rgb(238, 197, 197));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 200px; /* Add spacing between navbar items */
+    text-shadow: #333;
+}
+
+.logo-image {
+    border-radius: 20%;
+    overflow: hidden;
+    margin: -15px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #484948;
+    color: rgb(122, 125, 119);
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.4); /* Background color for the active tab */
+    color: #fff; /* Text color for the active tab */
+}
+/* END OF NAVIGATION CSS */
+
+/* About Section CSS */
+.about-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 20px auto;
+    margin-top:90px;
+    width: 80%;
+    box-shadow: 0px 2px 15px black;
+}
+
+.about-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.row {
+    height: 300px;
+    width: 80%;
+    background-color:#74756b;
+    margin: 0 auto 80px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #f1f1f1;
+    box-shadow: 0px 2px 15px black;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+.ImageContainer h1 {
+    font-size: 2.5em;
+    margin-top: 80px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.images {
+    height: 200px;
+    width: 200px;
+    box-shadow: 2px 2px 5px black;
+}
+.images:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px black;
+}
+#image1,#image2,#image3,#image4,#image5 {
+    /* background-image: url("neha.jpg"); */
+    /* background-size: cover; */
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    font-weight: 800;
+    animation: textFade 3s ease-in-out infinite alternate;
+    color: transparent;
+}   
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}
+
+@keyframes textFade {
+    0% { color: #edf1b7; }
+    50% { color: #f1fac4; }
+    100% { color: #daff9a; }
+}
+

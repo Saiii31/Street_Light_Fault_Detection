@@ -1,0 +1,190 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #7d7a19, rgb(238, 197, 197));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 200px; /* Add spacing between navbar items */
+    text-shadow: #333;
+}
+
+.logo-image {
+    border-radius: 20%;
+    overflow: hidden;
+    margin: -15px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #484948;
+    color: rgb(122, 125, 119);
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.4); /* Background color for the active tab */
+    color: #fff; /* Text color for the active tab */
+}
+/* END OF NAVIGATION CSS */
+
+
+/* Home Section CSS */
+.home-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 20px auto;
+    margin-top: 20px;
+    width: 70%;
+    box-shadow: 18px 12px 15px black;
+}
+
+.home-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.home-section p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+          
+    .bg {
+            background-image: url('s2.jpg');
+            height: 100%;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+        
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            background-color: rgb(176, 185, 147);
+            opacity: 0.9; /* Slight transparency */
+            justify-content: center;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 600px;
+            box-shadow: 10px 12px 10px black;
+
+
+        }
+        
+        .card-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .card-body{
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 500;
+            justify-content: center;
+            /* display: flex; */
+            align-items: center;
+            position: relative;
+        }
+       
+        .w{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-weight: 200;
+            margin-top: 50px;
+            animation: textFade 3s ease-in-out infinite alternate;
+        }
+        .w hr {
+            background-color: black;
+        }
+        .w2{
+            display: flex;
+            font-size: 20px;
+            font-weight: 200;
+            animation: slideIn 1.5s ease-in-out;
+            text-align: center;
+            justify-content: center;
+           
+        }
+        /* .w2 p{
+            display: flex;
+            font-weight: 50;
+            animation: slideIn 1.5s ease-in-out;
+            text-align: center;
+            justify-content: center;
+            
+        } */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+       
+         
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}
+
+@keyframes textFade {
+    0% { color: #bff9bd; }
+    50% { color: #50a259; }
+    100% { color: #053b0b; }
+}
+@keyframes fluctuate {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(1.2); }
+    100% { transform: scaleY(1); }
+  }
+
+  /* Apply animation to the element */
+  .fluctuate-animation {
+    animation: fluctuate 1s infinite;
+    transform-origin: left;
+  }

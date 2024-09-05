@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+</head>
+<htm>
+    <div style="margin-bottom: -2%;">
+        <ul>
+            <li style="float: left">
+                <a href="#">
+                    <div class="logo-image">
+                        <img src="street.jpeg" width="58px" height="auto" />
+                    </div>    
+                </a>
+            </li>
+            <li class="active">
+                <a href="Index.html"><i class="bi bi-house"></i>&emsp;&nbsp;Home</a>
+            </li>
+            <li>
+                <a href="faultDetection.html"><i class="bi bi-search"></i>&emsp;Fault Detection</a>
+            </li>
+            <li>
+                <a href="aboutUs.html"><i class="bi bi-person-circle"></i>&emsp;About Us</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="bg">
+    <div class="home-section">
+        <h1>FaultGuard Luminary</h1>
+        <p>By using this website you can find out the energy consumed by each light on street, We are also delegating the feature of detecting fault in lights</p>
+    </div>
+    </div>
+    <div class="w">
+        <h1>Welcome To Our Website </h1>
+    </div>
+    
+    <div class="w2">
+        <h6>Check Energy Consumption and Status of Street Lights </h6>
+        <!-- z -->
+    </div>
+    
+    <div style="display: flex; justify-content: center;">
+        <hr style="height: 2px; background-color: black; width: 50%;">
+    </div>
+    
+            <div class="card">
+                <div class="card-header">
+                    Overall Energy Consumption
+                </div>
+                <div class="card-body" id="bulbs">
+                    <p id="bulb-bar" class="fluctuate-animation"></p>
+                </div>
+            </div>
+        </div> 
+       
+    
+        <div class="footer">
+            &copy; 2024 Street Light Fault Detection System. All rights reserved.
+        </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

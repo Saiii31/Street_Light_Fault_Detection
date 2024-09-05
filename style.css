@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light gray background color */
+    /* background-image: url('background.jpg'); URL to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #7d7a19, rgb(238, 197, 197));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 200px; /* Add spacing between navbar items */
+    text-shadow: #333;
+    
+}
+
+.logo-image {
+    border-radius: 20%;
+    overflow: hidden;
+    margin: -15px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #484948;
+    color: rgb(122, 125, 119);
+}
+
+
+.active {
+    background: rgba(0, 0, 0, 0.4); /* Background color for the active tab */
+    color: #fff; /* Text color for the active tab */
+}
+/* END OF NAVIGATION CSS */
+
+.head {
+    
+    top: 20px; /* Adjust top position as needed */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center align the heading */
+    z-index: 1000; /* Ensure the heading appears above other elements */
+    background-color: rgba(126, 193, 187, 0.9); /* Add a semi-transparent background */
+    margin-bottom:15px;
+    margin-top: 40px;
+    column-gap: normal;
+    font-size: large;
+    background: linear-gradient(to right, #dff7c9, #fef5ee); /* Gradient from pink to orange */
+}
+
+.head h1 {
+    margin: 0;
+    padding: 10px; /* Add padding for better spacing */
+    font-size: 40px; /* Adjust font size as needed */
+    font-weight: bold; /* Optionally, make the text bold */
+
+}
+.image-container {
+    position: relative;
+    align-items: center;
+  width: 100%;
+  height: auto;
+    justify-content: center;
+     margin-left:10px;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    filter:brightness(50%);
+    filter:blur(1px);
+}
+.bulb-icon {
+    position: absolute;
+   font-size: 2em; 
+    position: absolute;
+    font-size: 50px; /* Adjust size as needed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+.bulb-info,.bulb-status {
+    position: absolute;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    font-weight: 520px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Hide the info boxes by default */
+  }
+  
+  .bulb-icon:hover + .bulb-info 
+  {
+    display: block; /* Show the info box on hover */
+  }
+
+  .bulbtext{
+    font-size: 15px;
+  }
+.bulb-value{
+    position: absolute;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800p;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Hide by default */
+  }
+  
+  .bulb-status {
+    font-weight: bold;
+  }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.bulb-icon {
+    animation: pulse 2s infinite; /* Apply pulse animation */
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
